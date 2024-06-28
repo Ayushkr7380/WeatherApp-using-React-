@@ -1,0 +1,29 @@
+#weatherdetails{
+    /* border: 2px solid black; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* width: 90%; */
+    margin: 1rem;
+    padding: .4rem;
+}
+#weatherdetails p{
+    color: white;
+    font-size: large;
+}
+#weatherdetails p span{
+    font-weight: 600;
+}
+#cityname{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+#cityname h1{
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+#sky{
+    margin: 1rem 0rem;
+    text-align: center;
+}
