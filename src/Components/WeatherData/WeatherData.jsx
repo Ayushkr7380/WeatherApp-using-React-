@@ -1,6 +1,14 @@
 import { useContext, useEffect, useState } from "react"
 import './WeatherData.css'
 import WeatherContext from "../../Context/WeatherContext/WeatherContext"
+import sunImage from '../../assets/Images/sun.png'
+import cloudImage from '../../assets/Images/cloud.png'
+import rainImage from '../../assets/Images/raining.png'
+import mistImage from '../../assets/Images/fog.png'
+import thunderImage from '../../assets/Images/thunder.png'
+import snowImage from '../../assets/Images/snow.png'
+import cloudyImage from '../../assets/Images/cloudy.png'
+
 function WeatherData(){
     const context = useContext(WeatherContext);
     const { correctCity, weatherData , isLoading }  = context;
@@ -17,26 +25,26 @@ function WeatherData(){
     let imageSource = ''
     switch (image) {
         case 'clouds':
-            imageSource = 'src/Components/WeatherData/Images/cloudy.png'
+            imageSource = cloudyImage;
             break;
         case 'mist':
-            imageSource = 'src/Components/WeatherData/Images/fog.png'
+            imageSource = mistImage;
             break;
     
         case 'rain':
-            imageSource = 'src/Components/WeatherData/Images/raining.png';
+            imageSource = rainImage;
             break;
         case 'snow':
-            imageSource = 'src/Components/WeatherData/Images/snow.png';
+            imageSource = snowImage;
             break;
         case 'clear': 
-            imageSource = 'src/Components/WeatherData/Images/sun.png';
+            imageSource = sunImage;
             break;
         case 'thunderstorm':
-            imageSource = 'src/Components/WeatherData/Images/thunder.png';
+            imageSource = thunderImage;
             break;
         default:
-            imageSource = 'src/Components/WeatherData/Images/cloud.png';
+            imageSource = cloudImage;
             break;
     }
     return(
@@ -55,7 +63,7 @@ function WeatherData(){
                     <p> <span>Temp : </span>{weatherData.main && weatherData.main.temp} °C</p>
                     <p> <span>Pressure :</span> {weatherData.main && weatherData.main.pressure}hPa</p>
                     <p> <span>Humidity :</span> {weatherData.main && weatherData.main.humidity}%</p>
-                    <p> <span>Speed :</span> {(weatherData.wind && weatherData.wind.speed) * 3.6 } km/hr</p>
+                    <p> <span>Speed :</span> {((weatherData.wind && weatherData.wind.speed) * 3.6 ).toFixed(2)} km/hr</p>
                 </div>
             </div>
             : <h1 style={{color:'white',

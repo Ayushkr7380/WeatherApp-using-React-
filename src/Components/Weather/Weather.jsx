@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext} from "react"
 import WeatherData from "../WeatherData/WeatherData"
 import './Weather.css'
 import WeatherContext from "../../Context/WeatherContext/WeatherContext"
